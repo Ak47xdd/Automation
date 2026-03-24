@@ -206,10 +206,10 @@ App\MLAuto.exe -w (write flag, use -h for help or to know of other flags!)
 | Flag | Description                                     |
 | ---- | ----------------------------------------------- |
 | `-h` | Show help information and available options     |
-| `-v` | Display version information                     |
+| `-v` | Display version information - current version   |
 | `-d` | Run debug mode - verify all library files exist |
 | `-w` | Write mode - generate ML pipeline (interactive) |
-| `-r` | Read mode - (under development)                 |
+| `-r` | Read mode - reads the generated .py file        |
 
 ### Interactive Mode
 
