@@ -44,7 +44,7 @@ int main(int argc, char *argv[])
         printf("\n>> [-v]\t\tShow version info\n");
         printf("\n>> [-d]\t\tDebug mode\n");
         printf("\n>> [-w]\t\tWrite output to file\n");
-        printf("\n>> [-r]\t\tRead input from file\n");
+        printf("\n>> [-c]\t\tConsole Mode\n");
 
         return EXIT_SUCCESS;
     }
@@ -75,10 +75,10 @@ int main(int argc, char *argv[])
 
         return EXIT_SUCCESS;
     }
-    else if (strcmp(argv[1], "-r") == 0)
+    else if (strcmp(argv[1], "-c") == 0)
     {
         system("cls");
-        printf("\n>> Read mode is under development, reverting to write mode\n");
+        printf("\n>> Console is under development, reverting to write mode\n");
         cli();
 
         return EXIT_SUCCESS;
