@@ -12,3 +12,4 @@ model.py
 *.ipynb
 .vscode
 .venv
+Python314
