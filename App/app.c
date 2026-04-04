@@ -72,8 +72,8 @@ DLL_API int main(int argc, char *argv[])
     else if (strcmp(argv[1], "-c") == 0)
     {
         system("cls");
-        printf("\n>> Console is under development, reverting to write mode\n");
-        cli();
+
+        system("cd ../console && python MLang.py");
 
         return EXIT_SUCCESS;
     }
