@@ -48,7 +48,7 @@ MLAuto is a **C-based code generator** that creates complete Python machine lear
 ```
 ┌─────────────┐     ┌──────────────┐     ┌─────────────────┐
 │  User Input │ ──► │  MLAuto CLI  │ ──► │  Python Script  │
-│  (CLI)       │     │  (Pure C)    │     │  (.py file)     │
+│  (CLI)      │     │  (Pure C)    │     │  (.py file)     │
 └─────────────┘     └──────────────┘     └─────────────────┘
                                                   │
                                                   ▼
