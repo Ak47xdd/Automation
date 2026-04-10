@@ -14,8 +14,8 @@
 
 #define SIZE 250
 #define BUFF 100
-#define VER "1.3.3 (beta)"
-#define VER_STRT "1.3.3"
+#define VER "1.3.5 (beta)"
+#define VER_STRT "1.3.5"
 
 FILE *fp = NULL;
 
