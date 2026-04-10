@@ -1,6 +1,7 @@
 # Machine Learning Pipeline Automator (MLAuto)
 
-![Version](https://img.shields.io/badge/version-1.3.3_beta-blue)
+![Version](https://img.shields.io/badge/version-1.3.5_beta-blue)
+![Console](https://img.shields.io/badge/console-MLang-brightgreen)
 ![License](https://img.shields.io/badge/license-MIT-green)
 ![Language](https://img.shields.io/badge/language-C/Python-orange)
 ![Platform](https://img.shields.io/badge/platform-Windows%20%7C%20Linux-lightgrey)
@@ -119,6 +120,14 @@ Automation/
 │   ├── PyList.h              # Python list generation
 │   ├── start_prog.h          # Program title screens
 │   └── utils.h               # Utility functions
+├── console/                    # MLang scripting interpreter (v1.3.3)
+│   ├── MLang.py               # REPL entrypoint
+│   ├── intpret.py             # Interpreter core
+│   ├── lex.py                 # Lexer
+│   ├── parser.py              # Parser
+│   ├── symtable.py            # Symbol table
+│   ├── MANUAL.md              # Language documentation
+│   └── ... (ctx.py, nodes.py, etc.)
 └── README.md                 # This file
 ```
 
@@ -131,10 +140,14 @@ Automation/
 #### Windows
 
 - **C Compiler:** MinGW-w64 or Visual Studio Build Tools
-- **Python 3.8+:** For running generated scripts
-- **Required Python Packages:**
+- **Python 3.8+:** For running generated scripts & MLang console
+- **MLAuto Python Packages:**
   ```bash
   pip install pandas numpy matplotlib seaborn scikit-learn xgboost
+  ```
+- **MLang Console:** Pure Python - no additional dependencies
+  ```bash
+  python console/MLang.py
   ```
 
 #### Linux/macOS
@@ -203,13 +216,13 @@ App\MLAuto.exe -w (write flag, use -h for help or to know of other flags!)
 
 ### Command-Line Flags
 
-| Flag | Description                                     |
-| ---- | ----------------------------------------------- |
-| `-h` | Show help information and available options     |
-| `-v` | Display version information - current version   |
-| `-d` | Run debug mode - verify all library files exist |
-| `-w` | Write mode - generate ML pipeline (interactive) |
-| `-c` | Console mode - Console scripting interpreter    |
+| Flag | Description                                                  |
+| ---- | ------------------------------------------------------------ |
+| `-h` | Show help information and available options                  |
+| `-v` | Display version information - current version                |
+| `-d` | Run debug mode - verify all library files exist              |
+| `-w` | Write mode - generate ML pipeline (interactive)              |
+| `-c` | Console mode - Launch MLang REPL (`python console/MLang.py`) |
 
 ### Interactive Mode
 
@@ -255,6 +268,33 @@ The generated Python script includes:
 4. **Preprocessing** - Column handling, transformations
 5. **Model Building** - Train/test split, model training
 6. **Evaluation** - Performance metrics
+
+## Console Scripting (MLang)
+
+**MLang v1.3.3**: Dynamically-typed, interpreted scripting language for ML tasks, launched via `-c` flag or directly.
+
+### Quick Start (REPL)
+
+```
+MLang >> VAR x = 10
+MLang >> print(x)
+10
+MLang >> VAR names = ["Alice", "Bob"]
+MLang >> print(len(names))
+2
+```
+
+### Key Features
+
+- Variables: `VAR x = 42`
+- Control Flow: IF/ELIF/ELSE, FOR, WHILE
+- Functions: `FUN name(arg) -> expr`
+- Lists: `append(lst, val)`, `len(lst)`
+- Built-ins: `print`, `input`, `run("file.mlang")`
+
+**Full documentation**: [console/MANUAL.md](console/MANUAL.md)
+
+Standalone: `python console/MLang.py` or integrate with MLAuto-generated scripts.
 
 ---
 
@@ -385,7 +425,9 @@ Contributions are welcome! This project is open-source under the MIT License.
    - Add new models in `scikit/sk_models.h`
    - Add new imports in `scikit/sk_imports.h`
    - Add new utilities in `structure/`
-   - Update documentation in `README.md`
+
+- Update documentation in `README.md`
+- MLang Console: Add features in `console/*.py`, builtins in `intpret.py`, test with `python console/MLang.py`
 
 5. **Test Your Changes**
 
@@ -504,12 +546,13 @@ SOFTWARE.
 
 ## Version History
 
-| Version      | Date | Changes                           |
-| ------------ | ---- | --------------------------------- |
-| 1.3.3 (Beta) | 2026 | Current development version       |
-| 1.3.2 (Beta) | 2026 | Stable release with core features |
-| 1.3.1 (Beta) | 2025 | Added PyTorch support             |
-| 1.3.0 (Beta) | 2025 | Initial release (GitHub release)  |
+| Version      | Date | Changes                                             |
+| ------------ | ---- | --------------------------------------------------- |
+| 1.3.5 (Beta) | 2024 | Added MLang console scripting interpreter (-c mode) |
+| 1.3.3 (Beta) | 2026 | Previous development version                        |
+| 1.3.2 (Beta) | 2026 | Stable release with core features                   |
+| 1.3.1 (Beta) | 2025 | Added PyTorch support                               |
+| 1.3.0 (Beta) | 2025 | Initial release (GitHub release)                    |
 
 ---
 
